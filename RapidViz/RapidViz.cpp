@@ -8,25 +8,56 @@
 using namespace std;
 
 Wizualizacja wiz(1300, 800);
-WizualizacjaWriter writer("test");
+//WizualizacjaWriter writer("test");
 
 int frameCount = 0;
+
+std::string plansza[] = {
+ "###########O###",
+ "#####..########",
+ "##.......###.##",
+ "###.....#O##.##",
+ "####.#.########",
+ "#########D#####",
+ "#O##############.......",
+ "###O##OO#######..#......",
+ "#O###O######O##..........",
+ "##O#####O#########....#O##",
+ "###################.######"
+};
+
+int pozX = 10;
+int pozY = 10;
 
 void rysuj() {
     vector<ElementWiz> noweElemWiz;
 
-    for (int i = 0; i < 70; i++) {
-        for (int j = 0; j < 70; j++) {
-            auto kolor = (i * frameCount) % 256;
-            auto kolor2 = (i ^ j + frameCount * kolor) % 256;
-            noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { i, j }, 1.0, sf::Color((kolor | kolor2) % 256, kolor2, kolor), "POZYCJA TO: " + to_string(i)));
-            noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KOLO, { i, j }, 0.5, sf::Color::White, "tralalala"));
-            //noweElemWiz.push_back(ElementWiz::liczba(i * 500 + j, { i, j }, 0.5, sf::Color::White, ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { -50, -50 }, 200, sf::Color(0xff0062ff), ""));
+
+    for (int i = 0; i < 11; i++) {
+        for (int j = 0; j < plansza[i].size(); j++) {
+            if (plansza[i][j] == '#') {
+                noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { j, i }, 1, sf::Color(0xff0062ff), ""));
+            } else if (plansza[i][j] == '.') {
+                noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { j, i }, 1, sf::Color(0xff0062ff), ""));
+                noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { j, i }, 1, sf::Color(255, 255, 255, (i * 92 + j * 382) % 79 + 130), "Woda."));
+            } else if (plansza[i][j] == 'D') {
+                noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { j, i }, 1, sf::Color(0xff0062ff), ""));
+                noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::DOM, { j, i }, 1, sf::Color(255, 255, 255, 210), "Punkt docelowy. 0 / 100 zajete. Budzet: 523 zl."));
+            } 
         }
     }
 
+    for (auto klawisz : wiz.getKlawisze()) {
+        if (klawisz == 'w') pozY--;
+        else if (klawisz == 's') pozY++;
+        else if (klawisz == 'a') pozX--;
+        else if (klawisz == 'd') pozX++;
+    }
+
     wiz.setNoweElementyWiz(noweElemWiz);
-    writer.dodajStan(noweElemWiz);
+    wiz.setStatus("Trwa rozgrywka. Pozostale jednostki: 14. Pozostaly czas: 1h. ");
+    //writer.dodajStan(noweElemWiz);
     frameCount++;
 }
 

@@ -137,6 +137,22 @@
     <ClCompile Include="wizualizacja.cpp" />
     <ClCompile Include="wizualizacja_writer.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="ui_font.ttf" />
+    <Font Include="ui_font_bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="background.png" />
+    <Image Include="command_mode_button.png" />
+    <Image Include="icon.png" />
+    <Image Include="minimap_button.png" />
+    <Image Include="new_window_button.png" />
+    <Image Include="selected.png" />
+    <Image Include="set_minimap_button.png" />
+    <Image Include="shapes.png" />
+    <Image Include="status.png" />
+    <Image Include="status_bar.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

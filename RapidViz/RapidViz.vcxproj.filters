@@ -13,15 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Pliki zasobów\images">
+      <UniqueIdentifier>{346eb876-9228-46c3-b1a9-df30fe4c0567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\fonts">
+      <UniqueIdentifier>{bf7b6027-5c23-400a-8e08-b7c210ee8fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki bibliotek">
+      <UniqueIdentifier>{a7963aa9-17a5-41bf-b6e6-9bdd95cc8c4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="element_wiz.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="ksztalt.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="lz4.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="okno_wizualizacji.h">
@@ -36,11 +42,11 @@
     <ClInclude Include="wizualizacja_writer.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="lz4.h">
+      <Filter>Pliki bibliotek</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lz4.c">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="element_wiz.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
@@ -62,5 +68,48 @@
     <ClCompile Include="wizualizacja_writer.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="lz4.c">
+      <Filter>Pliki bibliotek</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="ui_font_bold.ttf">
+      <Filter>Pliki zasobów\fonts</Filter>
+    </Font>
+    <Font Include="ui_font.ttf">
+      <Filter>Pliki zasobów\fonts</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="background.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="command_mode_button.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="icon.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="minimap_button.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="new_window_button.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="selected.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="set_minimap_button.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="shapes.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="status.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
+    <Image Include="status_bar.png">
+      <Filter>Pliki zasobów\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>
