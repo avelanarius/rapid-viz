@@ -16,11 +16,21 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 - [Funkcjonalność](#Funkcjonalność)
 
 ## Funkcjonalność
-- Możliwość wyświetlania różnego rodzaju figur (na obrazku część):
+- **Figury** (na obrazku część):
 
   <img src="https://github.com/avelanarius/rapid-viz/raw/master/Documentation/ksztalty.png" width="40%" />
   
   - Kształty z dostępnej biblioteki kształtów
   - Linie, z możliwością dostosowania grotów strzałek
   - Liczby
+- **Pasek ze statusem**, wyświetlający modyfikowalny status i pole opisu elementu pod kursorem myszki. 
 
+  <img src="https://github.com/avelanarius/rapid-viz/raw/master/Documentation/status_bar.png" width="50%" />
+  
+- **Minimapa**, pozwalająca na szybkie przemieszczanie się po obszarze roboczym.
+
+  <img src="https://github.com/avelanarius/rapid-viz/raw/master/Documentation/minimap.gif" width="30%" />
+
+- **Wiele okien**, ułatwiające obserwowanie obszaru roboczego w wielu miejscach na raz.
+
+  <img src="https://github.com/avelanarius/rapid-viz/raw/master/Documentation/wiele_okien.gif" width="70%" />
