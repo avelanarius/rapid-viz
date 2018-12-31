@@ -15,6 +15,8 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 ## Spis treści
 - [:page_with_curl: Funkcjonalność](#Funkcjonalność)
 - [:question: Przykład użycia](#Przykład-użycia)
+- [:floppy_disk: Instalacja](#Instalacja)
+  - [Windows, Visual Studio 2017](#Windows,-Visual-Studio-2017)
 
 ## Funkcjonalność
 - **Figury** (na obrazku część):
@@ -91,4 +93,27 @@ int main() {
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
+```
+
+## Instalacja
+Wymagane biblioteki:
+- SFML
+- OpenGL
+- GLEW
+
+Kod zawarty w repozytorium wymaga C++11.
+
+### Windows, Visual Studio 2017
+Repozytorium zawiera projekt Visual Studio 2017. Potrzebne biblioteki należy zainstalować za pomocą narzędzia ```vcpkg```:
+```batch
+vcpkg install sfml
+vcpkg install opengl
+vcpkg install glew
+
+# 64-bit
+# vcpkg install sfml:x64-windows
+# vcpkg install opengl:x64-windows
+# vcpkg install glew:x64-windows
+
+vcpkg integrate
 ```
