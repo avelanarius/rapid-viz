@@ -1,4 +1,4 @@
-# RapidViz [![Build status](https://ci.appveyor.com/api/projects/status/6av0hk306f83ndo6?svg=true)](https://ci.appveyor.com/project/avelanarius/rapid-viz)
+# RapidViz [![Build status](https://ci.appveyor.com/api/projects/status/6av0hk306f83ndo6?svg=true&passingText=windows%20-%20passing&failingText=windows%20-%20failing&pendingText=windows%20-%20pending)](https://ci.appveyor.com/project/avelanarius/rapid-viz)
 **RapidViz** to wieloplatformowa biblioteka graficzna napisana w C++, zorientowana na prostotę użycia, zaprojektowana pod kątem prototypowania i szybkiej iteracji. 
 
 RapidViz pozwala na wyświetlanie **figur** z szerokiej biblioteki kształtów, jak również różnego rodzaju linii oraz liczb. Proces wizualizacji odbywa się na **osobnym wątku** i nie wymaga obsługi ze strony użytkownika biblioteki. 
