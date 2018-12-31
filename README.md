@@ -14,7 +14,7 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 
 ## Spis treści
 - [Funkcjonalność](#Funkcjonalność)
-- [Przykład](#Przykład)
+- [Przykład użycia](#Przykład-użycia)
 
 ## Funkcjonalność
 - **Figury** (na obrazku część):
@@ -41,7 +41,12 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 - **Akceleracja sprzętowa**: biblioteka korzysta z OpenGL, dzięki czemu wyświetlanie jest wspomagane sprzętowo przez kartę graficzną.
 - **Wielowątkowość**: proces wizualizacji działa na osobnym wątku, a wszystkie metody wizualizacji są bezpieczne wielowątkowo. Pozwala to na aktualizowanie UI, nawet gdy główny wątek jest zajęty.
 
-## Przykład
+## Przykład użycia
+
+<img src="https://github.com/avelanarius/rapid-viz/raw/master/Documentation/przyklad.PNG" width="50%" />
+
+Przykład dostępny w pliku [RapidViz.cpp](https://github.com/avelanarius/rapid-viz/blob/master/RapidViz/RapidViz.cpp).
+
 ```c++
 #include "wizualizacja.h"
 #include "element_wiz.h"
