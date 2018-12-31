@@ -32,9 +32,20 @@ int pozY = 10;
 void rysuj() {
     vector<ElementWiz> noweElemWiz;
 
-    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { -50, -50 }, 200, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { -50, -50 }, 200, sf::Color::White, ""));
 
-    for (int i = 0; i < 11; i++) {
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { 0, 0 }, 0.8, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::DRZEWO, { 1, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::LUDZIK, { 2, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::GRADIENT2, { 3, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KOLO, { 4, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::DOLAR, { 5, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::ZNAK_ZAPYTANIA, { 6, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::liczba(5354, { 7, 0 }, 1, sf::Color(0xff0062ff), ""));
+    noweElemWiz.push_back(ElementWiz::linia({ 8-0.2, 0 - 0.2 }, { 8 + 0.2, 0 + 0.2 }, 0.15, StylLinii::STYL_BRAK_TROJKAT, sf::Color(0xff0062ff), ""));
+
+
+   /* for (int i = 0; i < 11; i++) {
         for (int j = 0; j < plansza[i].size(); j++) {
             if (plansza[i][j] == '#') {
                 noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { j, i }, 1, sf::Color(0xff0062ff), ""));
@@ -47,7 +58,7 @@ void rysuj() {
             } 
         }
     }
-
+    */
     for (auto klawisz : wiz.getKlawisze()) {
         if (klawisz == 'w') pozY--;
         else if (klawisz == 's') pozY++;
