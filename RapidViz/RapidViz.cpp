@@ -45,7 +45,7 @@ void rysuj() {
     noweElemWiz.push_back(ElementWiz::linia({ 8-0.2, 0 - 0.2 }, { 8 + 0.2, 0 + 0.2 }, 0.15, StylLinii::STYL_BRAK_TROJKAT, sf::Color(0xff0062ff), ""));
 
 
-   /* for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 11; i++) {
         for (int j = 0; j < plansza[i].size(); j++) {
             if (plansza[i][j] == '#') {
                 noweElemWiz.push_back(ElementWiz::ksztalt(Ksztalt::KWADRAT, { j, i }, 1, sf::Color(0xff0062ff), ""));
@@ -58,7 +58,6 @@ void rysuj() {
             } 
         }
     }
-    */
     for (auto klawisz : wiz.getKlawisze()) {
         if (klawisz == 'w') pozY--;
         else if (klawisz == 's') pozY++;
