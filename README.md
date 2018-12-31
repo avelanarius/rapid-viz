@@ -16,7 +16,7 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 - [:page_with_curl: Funkcjonalność](#Funkcjonalność)
 - [:question: Przykład użycia](#Przykład-użycia)
 - [:floppy_disk: Instalacja](#Instalacja)
-  - [Windows, Visual Studio 2017](#Windows,-Visual-Studio-2017)
+  - [Windows, Visual Studio 2017](#windows-visual-studio-2017)
 
 ## Funkcjonalność
 - **Figury** (na obrazku część):
