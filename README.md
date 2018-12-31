@@ -13,8 +13,8 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 </p>
 
 ## Spis treści
-- [Funkcjonalność](#Funkcjonalność)
-- [Przykład użycia](#Przykład-użycia)
+- [:page_with_curl: Funkcjonalność](#Funkcjonalność)
+- [:question: Przykład użycia](#Przykład-użycia)
 
 ## Funkcjonalność
 - **Figury** (na obrazku część):
