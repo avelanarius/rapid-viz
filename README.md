@@ -110,10 +110,10 @@ vcpkg install sfml
 vcpkg install opengl
 vcpkg install glew
 
-# 64-bit
-# vcpkg install sfml:x64-windows
-# vcpkg install opengl:x64-windows
-# vcpkg install glew:x64-windows
+:: 64-bit
+vcpkg install sfml:x64-windows
+vcpkg install opengl:x64-windows
+vcpkg install glew:x64-windows
 
 vcpkg integrate
 ```
