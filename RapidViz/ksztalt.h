@@ -67,7 +67,6 @@ public:
     bool operator==(const Ksztalt& innyKsztalt) const;
     bool operator!=(const Ksztalt& innyKsztalt) const;
 
-private:
     int idKsztaltu = 0;
     Ksztalt(int idKsztaltu) : idKsztaltu(idKsztaltu) {}
 };

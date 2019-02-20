@@ -122,19 +122,23 @@
     <ClInclude Include="element_wiz.h" />
     <ClInclude Include="ksztalt.h" />
     <ClInclude Include="lz4.h" />
+    <ClInclude Include="okno_player.h" />
     <ClInclude Include="okno_wizualizacji.h" />
     <ClInclude Include="styl_linii.h" />
     <ClInclude Include="wizualizacja.h" />
+    <ClInclude Include="wizualizacja_reader.h" />
     <ClInclude Include="wizualizacja_writer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="element_wiz.cpp" />
     <ClCompile Include="ksztalt.cpp" />
     <ClCompile Include="lz4.c" />
+    <ClCompile Include="okno_player.cpp" />
     <ClCompile Include="okno_wizualizacji.cpp" />
     <ClCompile Include="RapidViz.cpp" />
     <ClCompile Include="styl_linii.cpp" />
     <ClCompile Include="wizualizacja.cpp" />
+    <ClCompile Include="wizualizacja_reader.cpp" />
     <ClCompile Include="wizualizacja_writer.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -45,6 +45,12 @@
     <ClInclude Include="lz4.h">
       <Filter>Pliki bibliotek</Filter>
     </ClInclude>
+    <ClInclude Include="okno_player.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="wizualizacja_reader.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="element_wiz.cpp">
@@ -70,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="lz4.c">
       <Filter>Pliki bibliotek</Filter>
+    </ClCompile>
+    <ClCompile Include="okno_player.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="wizualizacja_reader.cpp">
+      <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
