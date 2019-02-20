@@ -1,4 +1,4 @@
-# RapidViz
+# RapidViz [![Build status](https://ci.appveyor.com/api/projects/status/6av0hk306f83ndo6?svg=true&passingText=windows%20-%20passing&failingText=windows%20-%20failing&pendingText=windows%20-%20pending)](https://ci.appveyor.com/project/avelanarius/rapid-viz)
 **RapidViz** to wieloplatformowa biblioteka graficzna napisana w C++, zorientowana na prostotę użycia, zaprojektowana pod kątem prototypowania i szybkiej iteracji. 
 
 RapidViz pozwala na wyświetlanie **figur** z szerokiej biblioteki kształtów, jak również różnego rodzaju linii oraz liczb. Proces wizualizacji odbywa się na **osobnym wątku** i nie wymaga obsługi ze strony użytkownika biblioteki. 
@@ -13,8 +13,10 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 </p>
 
 ## Spis treści
-- [Funkcjonalność](#Funkcjonalność)
-- [Przykład](#Przykład)
+- [:page_with_curl: Funkcjonalność](#Funkcjonalność)
+- [:question: Przykład użycia](#Przykład-użycia)
+- [:floppy_disk: Instalacja](#Instalacja)
+  - [Windows, Visual Studio 2017](#windows-visual-studio-2017)
 
 ## Funkcjonalność
 - **Figury** (na obrazku część):
@@ -41,7 +43,12 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 - **Akceleracja sprzętowa**: biblioteka korzysta z OpenGL, dzięki czemu wyświetlanie jest wspomagane sprzętowo przez kartę graficzną.
 - **Wielowątkowość**: proces wizualizacji działa na osobnym wątku, a wszystkie metody wizualizacji są bezpieczne wielowątkowo. Pozwala to na aktualizowanie UI, nawet gdy główny wątek jest zajęty.
 
-## Przykład
+## Przykład użycia
+
+<img src="https://github.com/avelanarius/rapid-viz/raw/master/Documentation/przyklad.PNG" width="50%" />
+
+Przykład dostępny w pliku [RapidViz.cpp](https://github.com/avelanarius/rapid-viz/blob/master/RapidViz/RapidViz.cpp).
+
 ```c++
 #include "wizualizacja.h"
 #include "element_wiz.h"
@@ -86,4 +93,27 @@ int main() {
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
+```
+
+## Instalacja
+Wymagane biblioteki:
+- SFML
+- OpenGL
+- GLEW
+
+Kod zawarty w repozytorium wymaga C++11.
+
+### Windows, Visual Studio 2017
+Repozytorium zawiera projekt Visual Studio 2017. Potrzebne biblioteki należy zainstalować za pomocą narzędzia ```vcpkg```:
+```batch
+vcpkg install sfml
+vcpkg install opengl
+vcpkg install glew
+
+:: 64-bit
+vcpkg install sfml:x64-windows
+vcpkg install opengl:x64-windows
+vcpkg install glew:x64-windows
+
+vcpkg integrate
 ```
