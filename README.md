@@ -41,6 +41,7 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 - **Interakcja z interfejsem**, umożliwiająca przechwytywanie zdarzeń kliknięcia widocznych elementów, wciśnięcia klawisza lub wpisania komendy.
 - **Zapis przebiegu wizualizacji**, który może być później interaktywnie odtwarzany.
 - **Akceleracja sprzętowa**: biblioteka korzysta z OpenGL, dzięki czemu wyświetlanie jest wspomagane sprzętowo przez kartę graficzną.
+- **Wsparcie kontrolera**: kontroler Xbox One.
 - **Wielowątkowość**: proces wizualizacji działa na osobnym wątku, a wszystkie metody wizualizacji są bezpieczne wielowątkowo. Pozwala to na aktualizowanie UI, nawet gdy główny wątek jest zajęty.
 
 ## Przykład użycia
