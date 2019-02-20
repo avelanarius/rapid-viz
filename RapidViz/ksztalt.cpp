@@ -44,17 +44,17 @@ const Ksztalt Ksztalt::CYFRA_0 = Ksztalt(39);
 const Ksztalt Ksztalt::MINUS = Ksztalt(40);
 
 int Ksztalt::getId() const {
-	return idKsztaltu;
+    return idKsztaltu;
 }
 
 sf::FloatRect Ksztalt::getTekstura() const {
-	return TEKSTURY[this->getId()];
+    return TEKSTURY[this->getId()];
 }
 
 bool Ksztalt::operator==(const Ksztalt& innyKsztalt) const {
-	return idKsztaltu == innyKsztalt.getId();
+    return idKsztaltu == innyKsztalt.getId();
 }
 
 bool Ksztalt::operator!=(const Ksztalt& innyKsztalt) const {
-	return !(*this == innyKsztalt);
+    return !(*this == innyKsztalt);
 }

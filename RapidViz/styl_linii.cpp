@@ -18,47 +18,47 @@ const StylLinii StylLinii::STYL_KWADRAT_TROJKAT = StylLinii(14);
 const StylLinii StylLinii::STYL_KWADRAT_KWADRAT = StylLinii(15);
 
 StylLinii StylLinii::fromId(int idStylu) {
-	return StylLinii(idStylu);
+    return StylLinii(idStylu);
 }
 
 int StylLinii::getId() const {
-	return idStylu;
+    return idStylu;
 }
 
 bool StylLinii::operator==(const StylLinii& innyStyl) const {
-	return idStylu == innyStyl.getId();
+    return idStylu == innyStyl.getId();
 }
 
 bool StylLinii::operator!=(const StylLinii& innyStyl) const {
-	return !(*this == innyStyl);
+    return !(*this == innyStyl);
 }
 
 Ksztalt StylLinii::ksztaltPoczatkowy() const {
-	auto idKsztaltu = idStylu / 4;
-	switch (idKsztaltu) {
-	default:
-	case 0:
-		return Ksztalt::BRAK;
-	case 1:
-		return Ksztalt::KOLO;
-	case 2:
-		return Ksztalt::TROJKAT;
-	case 3:
-		return Ksztalt::KWADRAT;
-	}
+    auto idKsztaltu = idStylu / 4;
+    switch (idKsztaltu) {
+        default:
+        case 0:
+            return Ksztalt::BRAK;
+        case 1:
+            return Ksztalt::KOLO;
+        case 2:
+            return Ksztalt::TROJKAT;
+        case 3:
+            return Ksztalt::KWADRAT;
+    }
 }
 
 Ksztalt StylLinii::ksztaltKoncowy() const {
-	auto idKsztaltu = idStylu % 4;
-	switch (idKsztaltu) {
-	default:
-	case 0:
-		return Ksztalt::BRAK;
-	case 1:
-		return Ksztalt::KOLO;
-	case 2:
-		return Ksztalt::TROJKAT;
-	case 3:
-		return Ksztalt::KWADRAT;
-	}
+    auto idKsztaltu = idStylu % 4;
+    switch (idKsztaltu) {
+        default:
+        case 0:
+            return Ksztalt::BRAK;
+        case 1:
+            return Ksztalt::KOLO;
+        case 2:
+            return Ksztalt::TROJKAT;
+        case 3:
+            return Ksztalt::KWADRAT;
+    }
 }
