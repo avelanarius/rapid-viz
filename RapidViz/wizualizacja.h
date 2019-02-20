@@ -109,6 +109,7 @@ private:
 	GLuint vertexBuffer;
 	std::vector<float> daneTrojkatow;
 
+    void obsluzJoystick();
 	void obslugaOkna();
 
 	static void inicjujGLEW();

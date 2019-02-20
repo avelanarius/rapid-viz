@@ -185,6 +185,8 @@ void Wizualizacja::obsluzZdarzeniaOkien() {
 		okno->myszka = false;
 		okno->obsluzLewyPrzyciskMyszy();
 
+        okno->obsluzJoystick();
+
 		sf::Event event;
 		bool zamkniete = false;
 		while (okno->window.pollEvent(event)) {

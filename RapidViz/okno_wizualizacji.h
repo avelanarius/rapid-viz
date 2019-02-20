@@ -11,7 +11,7 @@ class OknoWizualizacji {
 public:
 	OknoWizualizacji(int szerokosc, int wysokosc, sf::ContextSettings settings);
 
-	sf::RenderWindow window;
+    sf::RenderWindow window;
 	int szerokosc;
 	int wysokosc;
 
@@ -70,6 +70,10 @@ public:
 	void ustawDomyslneWidoki();
 	void ustawIkone(sf::Image icon);
 
+    void obsluzJoystick();
+    void zarejestrujZnak(char klawisz);
+
+    void obsluzPrzyciskJoystick(unsigned button);
 	void obsluzZdarzenia(sf::Event event);
 
 	void obsluzKomendyKlawiaturowe(sf::Event::KeyEvent keyEvent);
