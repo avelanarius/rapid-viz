@@ -21,8 +21,9 @@ OknoWizualizacji::OknoWizualizacji(int szerokosc, int wysokosc, sf::ContextSetti
 
     this->ustawDomyslneWidoki();
 }
-#include <iostream>
+
 void OknoWizualizacji::obsluzJoystick() {
+    if (!this->window.hasFocus()) return;
     for (auto joystick = 0; joystick < sf::Joystick::Count; joystick++) {
         if (!sf::Joystick::isConnected(joystick)) continue;
 
@@ -58,6 +59,10 @@ void OknoWizualizacji::obsluzJoystick() {
             }
         }
 
+        auto movePovX = sf::Joystick::getAxisPosition(joystick, sf::Joystick::PovX);
+        auto movePovY = sf::Joystick::getAxisPosition(joystick, sf::Joystick::PovY);
+
+        std::cout << movePovX << " " << movePovY << std::endl;
     }
 }
 
@@ -70,17 +75,20 @@ void OknoWizualizacji::zarejestrujZnak(char klawisz) {
 }
 
 void OknoWizualizacji::obsluzPrzyciskJoystick(unsigned button) {
+    if (!this->window.hasFocus()) return;
     if (button == 6) {
         this->widokMini.setSize(this->widok.getSize());
         this->widokMini.setCenter(this->widok.getCenter());
     } else if (button == 0) {
-        this->klawisze.push('a');
+        this->klawisze.push('A');
     } else if (button == 1) {
-        this->klawisze.push('b');
+        this->klawisze.push('B');
     } else if (button == 2) {
-        this->klawisze.push('x');
+        this->klawisze.push('X');
     } else if (button == 3) {
-        this->klawisze.push('y');
+        this->klawisze.push('Y');
+    } else if (button == 7) {
+        this->czyMinimapa = !this->czyMinimapa;
     }
 }
 
@@ -189,7 +197,6 @@ void OknoWizualizacji::obsluzZmianeRozmiaruOkna(sf::Event::SizeEvent sizeEvent) 
     this->widokMini.setSize(sf::Vector2f(this->widokMini.getSize().x * szerokoscRatio, this->widokMini.getSize().y * wysokoscRatio));
     this->window.setView(sf::View(sf::FloatRect(0, 0, static_cast<float>(this->szerokosc), static_cast<float>(this->wysokosc))));
 }
-#include <iostream>
 
 void OknoWizualizacji::obsluzLewyPrzyciskMyszy() {
     if (this->window.hasFocus()) {

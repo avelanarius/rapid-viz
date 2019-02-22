@@ -9,9 +9,6 @@
 #include <map>
 #include <mutex>
 #include <queue>
-#include <iostream>
-#include <future>
-
 #include "okno_wizualizacji.h"
 #include "element_wiz.h"
 
