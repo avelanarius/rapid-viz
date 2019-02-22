@@ -61,8 +61,6 @@ void OknoWizualizacji::obsluzJoystick() {
 
         auto movePovX = sf::Joystick::getAxisPosition(joystick, sf::Joystick::PovX);
         auto movePovY = sf::Joystick::getAxisPosition(joystick, sf::Joystick::PovY);
-
-        std::cout << movePovX << " " << movePovY << std::endl;
     }
 }
 

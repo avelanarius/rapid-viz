@@ -1,4 +1,5 @@
 #include "wizualizacja.h"
+#include <iostream>
 
 Wizualizacja::Wizualizacja(int szerokosc, int wysokosc) {
     this->szerokoscPoczatkowa = szerokosc;
