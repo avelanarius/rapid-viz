@@ -15,6 +15,7 @@ RapidViz umożliwia w prosty sposób na **interakcję z interfejsem**: kliknięc
 ## Spis treści
 - [:page_with_curl: Funkcjonalność](#Funkcjonalność)
 - [:question: Przykład użycia](#Przykład-użycia)
+- [:green_book: Dokumentacja API](#Dokumentacja-api)
 - [:floppy_disk: Instalacja](#Instalacja)
   - [Windows, Visual Studio 2017](#windows-visual-studio-2017)
 
@@ -95,6 +96,9 @@ int main() {
     }
 }
 ```
+
+## Dokumentacja API
+Dostępna jest wygenerowana [dokumentacja API](https://avelanarius.github.io/rapid-viz/docs/class_wizualizacja.html) Doxygen.
 
 ## Instalacja
 Wymagane biblioteki:
