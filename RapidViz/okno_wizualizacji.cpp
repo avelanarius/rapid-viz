@@ -49,13 +49,19 @@ void OknoWizualizacji::obsluzJoystick() {
             }
         }
 
-        auto supportsZoom = sf::Joystick::hasAxis(joystick, sf::Joystick::Y);
-        if (supportsZoom) {
+        auto supportsCursor = sf::Joystick::hasAxis(joystick, sf::Joystick::X)
+            && sf::Joystick::hasAxis(joystick, sf::Joystick::Y);
+        if (supportsCursor) {
+            auto moveX = sf::Joystick::getAxisPosition(joystick, sf::Joystick::X);
             auto moveY = sf::Joystick::getAxisPosition(joystick, sf::Joystick::Y);
-            if (fabs(moveY) > 15) {
-                moveY = copysign(pow(fabs(moveY), 1.6), moveY);
-                this->skala *= 1 + moveY / 59000.0;
-                this->widok.zoom(1 + moveY / 59000.0);
+            if (fabs(moveX) > 15 || fabs(moveY) > 15) {
+                moveX = copysign(pow(fabs(moveX), 1.4), moveX);
+                moveY = copysign(pow(fabs(moveY), 1.4), moveY);
+
+                auto currentPosition = sf::Mouse::getPosition();
+                currentPosition.x += moveX * 0.03;
+                currentPosition.y += moveY * 0.03;
+                sf::Mouse::setPosition(currentPosition);
             }
         }
 
@@ -71,7 +77,7 @@ void OknoWizualizacji::zarejestrujZnak(char klawisz) {
         this->komenda += klawisz;
     }
 }
-
+#include <iostream>
 void OknoWizualizacji::obsluzPrzyciskJoystick(unsigned button) {
     if (!this->window.hasFocus()) return;
     if (button == 6) {
@@ -87,6 +93,8 @@ void OknoWizualizacji::obsluzPrzyciskJoystick(unsigned button) {
         this->klawisze.push('Y');
     } else if (button == 7) {
         this->czyMinimapa = !this->czyMinimapa;
+    } else if (button == 8 || button == 9) {
+        this->myszka = true;
     }
 }
 
@@ -434,4 +442,35 @@ void OknoWizualizacji::rysujAnimacjeHUD() {
         animatedText.setScale(1 + 1.5f * timeDelta, 1 + 1.5f * timeDelta);
         this->window.draw(animatedText);
     }
+
+    this->window.setView(this->widok);
+
+    if (this->myszka) {
+        auto pozycjaMyszkiPixel = sf::Mouse::getPosition(this->window);
+        auto pozycjaMyszki = this->window.mapPixelToCoords(pozycjaMyszkiPixel);
+        
+        this->kliknieciaAnimacja.emplace_back(this->aktualnyCzasMs, pozycjaMyszki);
+    }
+
+    this->kliknieciaAnimacja.erase(std::remove_if(this->kliknieciaAnimacja.begin(),
+                                                      this->kliknieciaAnimacja.end(),
+                                                      [&](auto elem) { return this->aktualnyCzasMs - elem.first >= 400; }),
+                                       this->kliknieciaAnimacja.end());
+
+    for (auto animacja : this->kliknieciaAnimacja) {
+        auto timeDelta = static_cast<float>(this->aktualnyCzasMs - animacja.first) / 400.0f;
+        auto radius = timeDelta * this->skala * 100.0;
+        auto position = animacja.second;
+        position.x -= radius; position.y -= radius;
+
+        sf::CircleShape shape;
+        shape.setRadius(radius);
+        shape.setFillColor(sf::Color::Transparent);
+        shape.setOutlineColor(sf::Color(150, 150, 150, 255.0f - timeDelta * timeDelta * 255.0f));
+        shape.setOutlineThickness(this->skala * 10.0);
+        shape.setPosition(position);
+        this->window.draw(shape);
+    }
+
+    this->window.setView(sf::View(sf::FloatRect(0, 0, this->szerokosc, this->wysokosc)));
 }

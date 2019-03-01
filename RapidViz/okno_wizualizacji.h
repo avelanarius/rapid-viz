@@ -37,6 +37,7 @@ public:
     unsigned long long aktualnyCzasMs;
 
     std::vector<std::pair<unsigned long long, std::string>> wpisaneKomendyAnimacja;
+    std::vector<std::pair<unsigned long long, sf::Vector2f>> kliknieciaAnimacja;
 
     std::string statusObiektu;
 
